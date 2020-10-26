@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Stacked Bar Chart with Groups</title>
+	<script src="chart.min.js"></script>
+	<script src="utils.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+        -ms-user-select: none;
+        width:800px;
+        height:800px;
+	}
+	 /* #canvas-holder {
+		width: 100%;
+		margin-top: 50px;
+		text-align: center;
+	} */
+	/* #chartjs-tooltip {
+		/* opacity: 1;
+		position: absolute;
+		background: rgba(0, 0, 0, .7);
+		color: white;
+		border-radius: 3px;
+		pointer-events: none; 
+		max-width: 500;
+	} */
+
+	/* .chartjs-tooltip-key {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin-right: 10px;
+	} */
+.table__head{
+  color: #FFF;
+  font-weight: 700;
+  background: #9b4085;
+  background: -moz-linear-gradient(-45deg, #9b4085 0%, #608590 100%);
+  background: -webkit-linear-gradient(-45deg, #9b4085 0%,#608590 100%);
+  background: linear-gradient(135deg, #9b4085 0%,#608590 100%);
+  white-space: nowrap;
+}
+
+.table-bordered td, .table-bordered th{
+border: 0px solid #FFF;
+}
+
+tr.winner__table > td:first-child {
+    width: 23%;
+	color: #FFF;
+	background: #9b4085;
+}
+
+.winner__table{
+    white-space: nowrap;
+}
+/* 
+@media screen and (max-width: 567px) {
+    .winner__table{
+    font-size: 12px;
+    }
+} */
+	</style>
+</head>
+
+<body>
+	<select id="mySelect">
+        <option value="views">View</option>
+        <option value="calls">Calls</option>
+        <option value="comments">Comments</option>
+	</select>
+	<div style="width: 100%">
+		<canvas id="canvas"></canvas>
+	</div>
+    <script src="popup.js"></script>
+    <div id='message'></div>
+</body>
+</html>

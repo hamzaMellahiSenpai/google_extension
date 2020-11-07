@@ -74,32 +74,11 @@ var customTooltips = function(tooltip) {
   function getBody(bodyItem) {
     return bodyItem.lines;
   }
-  // currentProduct = getProductByName(tooltip.title[0])
-  // console.log(currentProduct)
   // Set Text
   var currentProduct = getProductByName(tooltip.title[0]);
   if (tooltip.body) {
     var titleLines = tooltip.title || [];
     var bodyLines = tooltip.body.map(getBody);
-
-    // var innerHtml = '<thead>';
-
-    // titleLines.forEach(function(title) {
-    //   innerHtml += '<tr><th>' + title + '</th></tr>';
-    //   currentProduct = getProductByName(title)
-    // });
-    // innerHtml += '</thead><tbody>';
-
-    // bodyLines.forEach(function(body, i) {
-    //   var colors = tooltip.labelColors[i];
-    //   var style = 'background:' + colors.backgroundColor;
-    //   style += '; border-color:' + colors.borderColor;
-    //   style += '; border-width: 2px';
-    //   var span = '<span class="chartjs-tooltip-key" style="' + style + '"></span>';
-    //   innerHtml += '<tr><td>' + span + body + '</td></tr>';
-    //   innerHtml += "<td><img width='50px' height='50px' src=" + currentProduct.img + ">";
-    // });
-    // innerHtml += '</tbody>';
     innerHtml = `
       <div class="container">
       <div class="table-responsive">
@@ -113,7 +92,7 @@ var customTooltips = function(tooltip) {
           <tbody>
               <tr class="winner__table">
               <td>Name</td>
-              <td>Tom</td>
+              <td>${currentProduct.name}</td>
               </tr>
               <tr class="winner__table">
                   <td ><i class="fa fa-eye" aria-hidden="true"></i>Views</td>
@@ -136,21 +115,13 @@ var customTooltips = function(tooltip) {
         </div>
       </div>
     `;
-    //var tableRoot = tooltipEl.querySelector('table');
     tooltipEl.innerHTML = innerHtml;
   }
 
   var positionY = this._chart.canvas.offsetTop;
   var positionX = this._chart.canvas.offsetLeft;
 
-  // Display, position, and set styles for font
   tooltipEl.style.opacity = 1;
-  // tooltipEl.style.left = positionX + tooltip.caretX + 'px';
-  // tooltipEl.style.top = positionY + tooltip.caretY + 'px';
-  // tooltipEl.style.fontFamily = tooltip._bodyFontFamily;
-  // tooltipEl.style.fontSize = tooltip.bodyFontSize + 'px';
-  // tooltipEl.style.fontStyle = tooltip._bodyFontStyle;
-  // tooltipEl.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
 }
 
 function draw_chart()

@@ -3,13 +3,9 @@
   "version": "1",
   "browser_action":
   {
-    //"default_icon": "logo.jpg",
+    "default_icon": "logo.jpg",
     "default_popup": "popup.html"
   },
-  // "background":
-  // {
-  //   "scripts": ["index.js"]
-  // },
   "permissions": [
     "tabs",
     "http://*/",
@@ -17,6 +13,5 @@
     "http://localhost/*",
     "<all_urls>"
   ],
-  "icons": { "128": "logo.jpg"},
-  "manifest_version": 2,
+  "manifest_version": 2
 }

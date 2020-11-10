@@ -3,7 +3,7 @@
   "version": "1",
   "browser_action":
   {
-    "default_icon": "logo.jpg",
+    "default_icon": "logo.jpeg",
     "default_popup": "popup.html"
   },
   "permissions": [
@@ -13,5 +13,5 @@
     "http://localhost/*",
     "<all_urls>"
   ],
-  "manifest_version": 2
+  //"manifest_version": 2
 }
